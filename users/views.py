@@ -8,13 +8,13 @@ from users.serializers.serializers import *
 class UsersListView(generics.ListAPIView):
     serializer_class = ForAuthUserSerializers
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
 
 class UsersDetailView(generics.RetrieveAPIView):
     serializer_class = ForAuthUserSerializers
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     # def get_queryset(self):
     #     user = self.request.user
@@ -24,11 +24,11 @@ class UsersDetailView(generics.RetrieveAPIView):
 class UsersCreateView(generics.CreateAPIView):
     serializer_class = ForCreateUserSerializers
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        user = self.request.user
-        return User.objects.filter(pk=user.id)
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     return User.objects.filter(pk=user.id)
 
 
 class UsersUpdateView(generics.UpdateAPIView):

@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'habit.apps.HabitConfig',
-
     'users.apps.UsersConfig',
     'rest_framework',
     'django_filters',
@@ -152,7 +151,6 @@ EMAIL_USE_SSL = True             # у gmail наоборот False
 #     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 # }
 
-# Настройки JWT-токенов
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -162,7 +160,6 @@ REST_FRAMEWORK = {
     # ]
 }
 
-# Настройки срока действия токенов
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15000),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=100),
