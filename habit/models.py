@@ -1,3 +1,4 @@
+import requests
 from django.db import models
 
 NULLABLE = {'null': True, 'blank': True}
@@ -5,7 +6,7 @@ NULLABLE = {'null': True, 'blank': True}
 
 class Habit(models.Model):
     name = models.CharField(max_length=150, verbose_name='название')
-    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='создатель')
+    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='создатель', **NULLABLE)
     place = models.CharField(max_length=150, verbose_name='место')
     time = models.TimeField(verbose_name='время')
     action = models.CharField(max_length=150, verbose_name='действие')

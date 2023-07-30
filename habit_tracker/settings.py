@@ -142,10 +142,10 @@ AUTH_USER_MODEL = 'users.User'
 
 EMAIL_HOST = 'smtp.yandex.com'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")      # берет из .env
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")      # берет из .env
-EMAIL_USE_TLS = False            # у gmail наоборот True
-EMAIL_USE_SSL = True             # у gmail наоборот False
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
