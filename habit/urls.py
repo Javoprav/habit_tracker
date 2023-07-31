@@ -7,5 +7,5 @@ router.register(r'habits', HabitsViewSet, basename='habits')
 
 
 urlpatterns = [
-
+    path('public_habits/', HabitsListView.as_view(), name='habits_list'),
               ] + router.urls

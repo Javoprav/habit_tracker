@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
+from rest_framework.permissions import IsAuthenticated
+
 from habit.models import Habit
 from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers
@@ -24,3 +26,17 @@ class HabitsViewSet(viewsets.ModelViewSet):
         else:
             return Habit.objects.filter(owner=user)
 
+
+class HabitsListView(generics.ListAPIView):
+    serializer_class = HabitSerializers
+    queryset = Habit.objects.all()
+    # permission_classes = [IsAuthenticated]
+    pagination_class = HabitPagination
+
+    def get_queryset(self):
+        """Список публичных привычек"""
+        user = self.request.user
+        if user.is_staff or user.is_superuser or user.role == UserRoles.MODERATOR:
+            return Habit.objects.all()
+        else:
+            return Habit.objects.filter(public=True)
