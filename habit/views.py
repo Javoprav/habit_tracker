@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from habit.models import Habit
+from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers
 from users.models import UserRoles
 
@@ -9,7 +10,7 @@ class HabitsViewSet(viewsets.ModelViewSet):
     serializer_class = HabitSerializers
     queryset = Habit.objects.all()
     # permission_classes = [IsAuthenticated]
-    # pagination_class = HabitPagination
+    pagination_class = HabitPagination
 
     def perform_create(self, serializer) -> None:
         """Сохраняет новому объекту владельца"""
