@@ -61,6 +61,10 @@ python manage.py loaddata data.json
 ```bash
 python manage.py runserver
 ```
+15. Запустить Celery Worker
+```bash
+celery -A config worker -l INFO
+```
 
 Задание
 

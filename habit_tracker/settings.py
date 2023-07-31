@@ -165,16 +165,21 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=100),
 }
 
-# Настройки для Celery
-CELERY_BROKER_URL = 'redis://localhost:6379'  # URL-адрес брокера сообщений, например Redis
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'  # URL-адрес брокера результатов, также Redis
-CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Moscow'
 
-# Настройки для Celery
+
 # CELERY_BEAT_SCHEDULE = {
 #     'task-name': {
-#         'task': 'habit.tasks.check_user',  # Путь к задаче
-#         'schedule': timedelta(minutes=1),  # Расписание выполнения задачи (например, каждые 10 минут)
+#         'task': 'habit.tasks.check_user',
+#         'schedule': timedelta(minutes=1),
 #     },
 # }
+
+TG_BOT_TOKEN = os.getenv("TG_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
