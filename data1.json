@@ -18,7 +18,7 @@
   },
   {
     "model": "habit.habit",
-    "pk": 1,
+    "pk": 2,
     "fields": {
       "name": "habit_good2",
       "owner": 2,
@@ -35,7 +35,7 @@
   },
   {
     "model": "habit.habit",
-    "pk": 1,
+    "pk": 3,
     "fields": {
       "name": "not_habit_good",
       "owner": 4,
@@ -52,7 +52,7 @@
   },
   {
     "model": "habit.habit",
-    "pk": 1,
+    "pk": 4,
     "fields": {
       "name": "habit_good3",
       "owner": 4,

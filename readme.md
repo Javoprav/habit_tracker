@@ -55,7 +55,7 @@ python manage.py migrate
 ```
 13. Загрузить данные с помощью фикстур
 ```bash
-python manage.py loaddata data.json
+python manage.py loaddata data1.json
 ```
 14. Запустить сервер
 ```bash
@@ -63,7 +63,7 @@ python manage.py runserver
 ```
 15. Запустить Celery Worker
 ```bash
-celery -A config worker -l INFO
+celery -A habit_tracker worker -l INFO
 ```
 
 Задание

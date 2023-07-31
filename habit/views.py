@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from habit.models import Habit
 from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers
+from habit.tasks import check_time_habit
 from users.models import UserRoles
 
 
@@ -36,6 +37,7 @@ class HabitsListView(generics.ListAPIView):
     def get_queryset(self):
         """Список публичных привычек"""
         user = self.request.user
+        check_time_habit()
         if user.is_staff or user.is_superuser or user.role == UserRoles.MODERATOR:
             return Habit.objects.all()
         else:
