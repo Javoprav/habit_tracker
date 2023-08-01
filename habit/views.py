@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from habit.models import Habit
 from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers
-from habit.tasks import check_time_habit
+from habit.tasks import create_habit_schedule
 from users.models import UserRoles
 
 
@@ -16,8 +16,10 @@ class HabitsViewSet(viewsets.ModelViewSet):
     pagination_class = HabitPagination
 
     def perform_create(self, serializer) -> None:
-        """Сохраняет новому объекту владельца"""
+        """Сохраняет новому объекту владельца и создает задачу"""
         serializer.save(owner=self.request.user)
+        habit = serializer.save()
+        create_habit_schedule(habit)
 
     def get_queryset(self):
         """Список привычек только для юзера или модератора"""
@@ -37,7 +39,6 @@ class HabitsListView(generics.ListAPIView):
     def get_queryset(self):
         """Список публичных привычек"""
         user = self.request.user
-        check_time_habit()
         if user.is_staff or user.is_superuser or user.role == UserRoles.MODERATOR:
             return Habit.objects.all()
         else:

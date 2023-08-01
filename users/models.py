@@ -18,6 +18,7 @@ class User(AbstractUser):
     city = models.CharField(max_length=100, verbose_name='Город', **NULLABLE)
     role = models.CharField(max_length=10, choices=UserRoles.choices, default=UserRoles.MEMBER, verbose_name='роль', **NULLABLE)
     is_active = models.BooleanField(default=True,  verbose_name='активность')
+    chat_id = models.CharField(max_length=15, verbose_name='ID бота TG', **NULLABLE)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
