@@ -4,6 +4,7 @@ from django_celery_beat.models import CrontabSchedule, PeriodicTask, IntervalSch
 from habit.models import Habit
 from django.conf import settings
 from telebot import TeleBot
+from habit_tracker.celery import app
 
 
 def send_telegram_message(habit_id):

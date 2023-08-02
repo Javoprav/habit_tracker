@@ -6,7 +6,7 @@
       "name": "habit_good1",
       "owner": 4,
       "place": "home",
-      "time": "21:00:00",
+      "time": "18:00:00",
       "action": "pump up the press",
       "is_pleasurable": true,
       "associated_habit": null,
@@ -23,7 +23,7 @@
       "name": "habit_good2",
       "owner": 2,
       "place": "home",
-      "time": "21:00:00",
+      "time": "19:00:00",
       "action": "pump up the press",
       "is_pleasurable": true,
       "associated_habit": null,
@@ -40,7 +40,7 @@
       "name": "not_habit_good",
       "owner": 4,
       "place": "home",
-      "time": "21:00:00",
+      "time": "20:00:00",
       "action": "pump up the press",
       "is_pleasurable": false,
       "associated_habit": null,
@@ -72,7 +72,7 @@
     "pk": 2,
     "fields": {
       "password": "pbkdf2_sha256$600000$WEJGJU6QUgQa11uUfIDOYF$/7D2V63jbhAO1Ljxk+Lf0Rrw6VThS3cTXPe5u3z/32M=",
-      "last_login": "2023-07-30T13:24:45.575Z",
+      "last_login": "2023-08-02T08:44:08.054Z",
       "is_superuser": true,
       "first_name": "",
       "last_name": "",
@@ -84,6 +84,7 @@
       "city": null,
       "role": "member",
       "is_active": true,
+      "chat_id": "378037756",
       "groups": [],
       "user_permissions": []
     }
@@ -105,6 +106,7 @@
       "city": null,
       "role": "member",
       "is_active": true,
+      "chat_id": "378037756",
       "groups": [],
       "user_permissions": []
     }
@@ -126,8 +128,8 @@
       "city": null,
       "role": "moderator",
       "is_active": true,
+      "chat_id": "378037756",
       "groups": [],
       "user_permissions": []
     }
-  }
-]
+  }]

@@ -36,7 +36,7 @@ sudo -u postgres psql
 8. Cоздать базу данных 
 с помощью следующей команды:
 ```bash
-CREATE DATABASE habit_tracker;
+CREATE DATABASE habit_tracker2;
 ```
 9. Выйти
 ```bash
@@ -55,7 +55,7 @@ python manage.py migrate
 ```
 13. Загрузить данные с помощью фикстур
 ```bash
-python manage.py loaddata data1.json
+python manage.py loaddata data2.json
 ```
 14. Запустить сервер
 ```bash
