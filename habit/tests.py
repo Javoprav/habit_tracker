@@ -38,3 +38,20 @@ class  CourseTestCase(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(habit_test.name, 'habit_for_test')
 
+    def test_get_habit(self):
+        """Тест деталей модели Habit"""
+        self.test_habit_create()
+        response = self.client.get(f'/api/habits/1/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json(), {'id': 1, 'name': 'habit_for_test', 'place': 'home', 'time': '17:53:00',
+                                           'action': 'pump up the press test', 'is_pleasurable': True, 'periodic': 1,
+                                           'reward': None, 'execution_time': '00:02:00', 'public': True, 'owner': 1,
+                                           'associated_habit': None})
+
+    def test_list_habits(self):
+        """Тест списка модели Habit"""
+        self.test_habit_create()
+        response = self.client.get('/api/habits/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.json(), {'count': 2, 'next': None, 'previous': None, 'results': [{'id': 1, 'name': 'habit_for_test', 'place': 'home', 'time': '17:53:00', 'action': 'pump up the press test', 'is_pleasurable': True, 'periodic': 1, 'reward': None, 'execution_time': '00:02:00', 'public': True, 'owner': 1, 'associated_habit': None}, {'id': 2, 'name': 'habit_for_test', 'place': 'home', 'time': '17:53:00', 'action': 'pump up the press test', 'is_pleasurable': True, 'periodic': 1, 'reward': 'None', 'execution_time': '00:02:00', 'public': True, 'owner': 1, 'associated_habit': None}]})
+        self.assertEqual(Habit.objects.all().count(), 2)
