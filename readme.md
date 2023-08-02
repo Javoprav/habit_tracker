@@ -36,7 +36,7 @@ sudo -u postgres psql
 8. Cоздать базу данных 
 с помощью следующей команды:
 ```bash
-CREATE DATABASE habit_tracker2;
+CREATE DATABASE habit_tracker;
 ```
 9. Выйти
 ```bash
@@ -61,9 +61,12 @@ python manage.py loaddata data2.json
 ```bash
 python manage.py runserver
 ```
-15. Запустить Celery Worker
+15. Запустить Celery
 ```bash
 celery -A habit_tracker worker -l INFO
+```
+```bash
+celery -A habit_tracker beat -l info
 ```
 
 Задание
