@@ -5,7 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from habit.models import Habit
 from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers
-from habit.tasks import create_habit_schedule
+from habit.services import create_habit_schedule
 from users.models import UserRoles
 
 

@@ -1,0 +1,135 @@
+[
+  {
+    "model": "habit.habit",
+    "pk": 1,
+    "fields": {
+      "name": "habit_good1",
+      "owner": 4,
+      "place": "home",
+      "time": "18:00:00",
+      "action": "pump up the press",
+      "is_pleasurable": true,
+      "associated_habit": null,
+      "periodic": 1,
+      "reward": null,
+      "execution_time": "00:02:00",
+      "public": true
+    }
+  },
+  {
+    "model": "habit.habit",
+    "pk": 2,
+    "fields": {
+      "name": "habit_good2",
+      "owner": 2,
+      "place": "home",
+      "time": "19:00:00",
+      "action": "pump up the press",
+      "is_pleasurable": true,
+      "associated_habit": null,
+      "periodic": 1,
+      "reward": null,
+      "execution_time": "00:02:00",
+      "public": false
+    }
+  },
+  {
+    "model": "habit.habit",
+    "pk": 3,
+    "fields": {
+      "name": "not_habit_good",
+      "owner": 4,
+      "place": "home",
+      "time": "20:00:00",
+      "action": "pump up the press",
+      "is_pleasurable": false,
+      "associated_habit": null,
+      "periodic": 1,
+      "reward": null,
+      "execution_time": "00:02:00",
+      "public": true
+    }
+  },
+  {
+    "model": "habit.habit",
+    "pk": 4,
+    "fields": {
+      "name": "habit_good3",
+      "owner": 4,
+      "place": "home",
+      "time": "21:00:00",
+      "action": "pump up the press",
+      "is_pleasurable": true,
+      "associated_habit": null,
+      "periodic": 1,
+      "reward": null,
+      "execution_time": "00:02:00",
+      "public": true
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$WEJGJU6QUgQa11uUfIDOYF$/7D2V63jbhAO1Ljxk+Lf0Rrw6VThS3cTXPe5u3z/32M=",
+      "last_login": "2023-08-02T08:44:08.054Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "date_joined": "2023-07-30T13:20:50.149Z",
+      "email": "javoprav@gmail.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "role": "member",
+      "is_active": true,
+      "chat_id": "378037756",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$gv8nVNsPRtlC16SrBqbnnQ$X9luoHuN/3dt6VSnuVWC2toCkal/KBmLoqNBEfLIzm0=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "date_joined": "2023-07-30T14:25:13.891Z",
+      "email": "user@user1.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "role": "member",
+      "is_active": true,
+      "chat_id": "378037756",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$rp7Y8yrrgdIYRQgdZYnBee$oXT6UzICB+lxQMnV+u48lDbBYPtl61/34kKqWTLrs5k=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "date_joined": "2023-07-30T14:25:14.012Z",
+      "email": "moder@moder1.com",
+      "phone": null,
+      "avatar": "",
+      "city": null,
+      "role": "moderator",
+      "is_active": true,
+      "chat_id": "378037756",
+      "groups": [],
+      "user_permissions": []
+    }
+  }]
