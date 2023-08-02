@@ -34,9 +34,7 @@ class  CourseTestCase(APITestCase):
         response = self.client.post('/api/habits/', {'name': self.test_model_name, "place": "home", "time": "17:53",
                                                      "action": "pump up the press test", "is_pleasurable": True,
                                                      "periodic": 1, "reward": 'None', "execution_time": "00:02",
-                                                     "public": True, "owner": 1, 'associated_habit': None})
-        response_data = response.json()
-        print(response_data)
+                                                     "public": True, "owner": 1})
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(habit_test.name, 'habit_for_test')
 
