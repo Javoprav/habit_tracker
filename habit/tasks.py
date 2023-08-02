@@ -1,9 +1,7 @@
 from datetime import datetime, timedelta
 from celery import shared_task
-from django_celery_beat.models import CrontabSchedule, PeriodicTask, IntervalSchedule
 from django.conf import settings
 from telebot import TeleBot
-from habit.services import send_telegram_message2
 from habit_tracker.celery import app
 from habit.models import Habit
 
@@ -26,12 +24,12 @@ def send_telegram_message(habit_id):
 #             send_telegram_message(habit)
 
 
-@shared_task
-def check_time():
-    bot = TeleBot(settings.TG_BOT_TOKEN)
-    time = datetime.now().time()
-    time_start_task = datetime.now() - timedelta(minutes=1)
-    data_habit = Habit.objects.filter(time__gte=time_start_task)
-    for item in data_habit.filter(time__lte=time):
-        text = f'Напоминание о выполнении привычки  {item.action} в {item.time} в {item.place}'
-        bot.send_message(item.owner.chat_id, text)
+# @shared_task
+# def check_time():
+#     bot = TeleBot(settings.TG_BOT_TOKEN)
+#     time = datetime.now().time()
+#     time_start_task = datetime.now() - timedelta(minutes=1)
+#     data_habit = Habit.objects.filter(time__gte=time_start_task)
+#     for item in data_habit.filter(time__lte=time):
+#         text = f'Напоминание о выполнении привычки  {item.action} в {item.time} в {item.place}'
+#         bot.send_message(item.owner.chat_id, text)
