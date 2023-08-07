@@ -1,7 +1,4 @@
-from django.shortcuts import render
 from rest_framework import viewsets, generics
-from rest_framework.permissions import IsAuthenticated
-
 from habit.models import Habit
 from habit.pagination import HabitPagination
 from habit.serializers.serializers import HabitSerializers

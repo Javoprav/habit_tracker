@@ -1,7 +1,4 @@
 from django_celery_beat.models import CrontabSchedule, PeriodicTask
-from telebot import TeleBot
-from django.conf import settings
-from habit.models import Habit
 
 
 def create_habit_schedule(habit):

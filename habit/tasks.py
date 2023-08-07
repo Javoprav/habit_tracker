@@ -1,5 +1,4 @@
-from datetime import datetime, timedelta
-from celery import shared_task
+
 from django.conf import settings
 from telebot import TeleBot
 from habit_tracker.celery import app
